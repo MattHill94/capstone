@@ -36,6 +36,7 @@ public class PdfGenerationDemo
         File xsltFile = new File(RESOURCES_DIR + "//template.xsl");
         // the XML file which provides the input
         StreamSource xmlSource = new StreamSource(new File(RESOURCES_DIR + "//data.xml"));
+
         // create an instance of fop factory
         FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
         // a user agent is needed for transformation
