@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="application/xml"?>
+<users-data>
+    <header-section>
+        <data-type id="001">User Bill Data</data-type>
+        <process-date>Thursday June 23 2022 00:12:00</process-date>
+    </header-section>
+    <user-bill-data>
+        <full-name>John Doe</full-name>
+        <number>34239</number>
+    </user-bill-data>
+    <user-bill-data>
+        <full-name>Michael Doe</full-name>
+        <number>54823</number>
+    </user-bill-data>
+    <user-bill-data>
+        <full-name>Jane Brown</full-name>
+        <number>66742</number>
+    </user-bill-data>
+</users-data>
