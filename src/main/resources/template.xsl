@@ -53,6 +53,10 @@
                         <fo:table-column column-width="proportional-column-width(25)"/>
                         <fo:table-column column-width="proportional-column-width(50)"/>
                         <fo:table-body font-size="95%">
+
+
+
+
                             <fo:table-row height="8mm">
                                 <fo:table-cell>
                                     <fo:block>Full Name</fo:block>
@@ -62,6 +66,8 @@
                                 </fo:table-cell>
                             </fo:table-row>
                             <xsl:for-each select="record">
+                                <xsl:sort select="number" order="descending"/>
+
                                 <fo:table-row>
                                     <fo:table-cell>
                                         <fo:block>
@@ -70,8 +76,9 @@
                                     </fo:table-cell>
                                     <fo:table-cell>
                                         <fo:block>
+
                                             <xsl:value-of select="number" />
-                                            <xsl
+
 
                                         </fo:block>
                                     </fo:table-cell>
