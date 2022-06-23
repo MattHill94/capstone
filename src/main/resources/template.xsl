@@ -16,6 +16,9 @@
                         <fo:table-column column-width="proportional-column-width(45)"/>
                         <fo:table-column column-width="proportional-column-width(20)"/>
                         <fo:table-body>
+
+
+
                             <fo:table-row>
                                 <fo:table-cell text-align="left" display-align="center" padding-left="2mm">
                                     <fo:block>
@@ -38,6 +41,8 @@
                                 </fo:table-cell>
                             </fo:table-row>
                         </fo:table-body>
+
+
                     </fo:table>
                 </fo:static-content>
                 <fo:flow flow-name="xsl-region-body" border-collapse="collapse" reference-orientation="0">
@@ -56,16 +61,18 @@
                                     <fo:block>number</fo:block>
                                 </fo:table-cell>
                             </fo:table-row>
-                            <xsl:for-each select="user-bill-data">
+                            <xsl:for-each select="record">
                                 <fo:table-row>
                                     <fo:table-cell>
                                         <fo:block>
-                                            <xsl:value-of select="full-name"/>
+                                            <xsl:value-of select="name"/>
                                         </fo:block>
                                     </fo:table-cell>
                                     <fo:table-cell>
                                         <fo:block>
-                                            <xsl:value-of select="number"/>
+                                            <xsl:value-of select="number" />
+                                            <xsl
+
                                         </fo:block>
                                     </fo:table-cell>
                                 </fo:table-row>
