@@ -56,16 +56,18 @@
                                     <fo:block>number</fo:block>
                                 </fo:table-cell>
                             </fo:table-row>
-                            <xsl:for-each select="user-bill-data">
+                            <xsl:for-each select="record">
+                                <xsl:sort select="number" order="descending"/>
+
                                 <fo:table-row>
                                     <fo:table-cell>
                                         <fo:block>
-                                            <xsl:value-of select="full-name"/>
+                                            <xsl:value-of select="name"/>
                                         </fo:block>
                                     </fo:table-cell>
                                     <fo:table-cell>
                                         <fo:block>
-                                            <xsl:value-of select="number"/>
+                                            <xsl:value-of select="number" />
                                         </fo:block>
                                     </fo:table-cell>
                                 </fo:table-row>
