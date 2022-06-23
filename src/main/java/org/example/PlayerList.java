@@ -56,14 +56,14 @@ public class PlayerList {
         return players;
     }
 
-    //This method takes a players list as a parameter
+    //This method takes a players list as a parameter, make a copy of the list then sort the copy in ASC order and return the copy.
     public static List<Player> sortASC(List<Player> players){
         List<Player> tempPlayers = copyList(players);
         tempPlayers.sort((p1, p2) -> p1.getNum() - p2.getNum());
         return tempPlayers;
     }
 
-    //This method takes the
+    //This method takes a players list as a parameter, make a copy of the list then sort the copy in DESC order and return the copy.
     public static List<Player> sortDESC(List<Player> players){
         List<Player> tempPlayers = copyList(players);
         tempPlayers.sort((p1, p2) -> p2.getNum() - p1.getNum());
