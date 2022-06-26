@@ -10,24 +10,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PlayerList {
-    public static void main(String[] args) {
-        List<Player> oldPlayers = getPlayersFromXML();
-//        List<Player> players = sortASC(oldPlayers);
-        List<Player> players = sortDESC(oldPlayers);
-        for (Player player:players
-             ) {
-            System.out.println("Name: "+player.getName()+" \tNumber: "+player.getNum());
-        }
-        System.out.println("***************************************************");
-        for (Player player:oldPlayers
-        ) {
-            System.out.println("Name: "+player.getName()+" \tNumber: "+player.getNum());
-        }
+    private List<Player> players;
+
+    public PlayerList() {
+        this.players = new LinkedList<Player>();
+        getPlayersFromXML();
     }
 
-
-    public static List<Player> getPlayersFromXML(){
-        List<Player> players = new LinkedList<>();
+    private List<Player> getPlayersFromXML(){
         try{
             File file = new File("../capstone/src/main/resources/data.xml");
             if (file.exists()) {
@@ -53,26 +43,33 @@ public class PlayerList {
             System.out.println(e.getMessage());
         }
         //We then return the final collection of players
-        return players;
+        return this.players;
     }
 
     //This method takes a players list as a parameter, make a copy of the list then sort the copy in ASC order and return the copy.
-    public static List<Player> sortASC(List<Player> players){
-        List<Player> tempPlayers = copyList(players);
+    public List<Player> sortASC(){
+        List<Player> tempPlayers = copyList();
         tempPlayers.sort((p1, p2) -> p1.getNum() - p2.getNum());
         return tempPlayers;
     }
 
     //This method takes a players list as a parameter, make a copy of the list then sort the copy in DESC order and return the copy.
-    public static List<Player> sortDESC(List<Player> players){
-        List<Player> tempPlayers = copyList(players);
+    public List<Player> sortDESC(){
+        List<Player> tempPlayers = copyList();
         tempPlayers.sort((p1, p2) -> p2.getNum() - p1.getNum());
         return tempPlayers;
     }
 
     //This method is for copying one LinkedList to a new LinkedList to avoid making changes to the original List.
-    private static List<Player> copyList(List<Player> players) {
-        return new LinkedList<>(players);
+    private List<Player> copyList() {
+        return new LinkedList<>(this.players);
+    }
+
+    public void printList() {
+        for (Player player: this.players
+             ) {
+            System.out.println("Name: "+player.getName()+"\tNumber: "+player.getNum());
+        }
     }
 }
 

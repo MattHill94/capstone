@@ -29,6 +29,19 @@ public class PdfGenerationDemo
         } catch (FOPException | IOException | TransformerException e) {
             e.printStackTrace();
         }
+
+
+//       PlayerList team1 = new PlayerList();
+//       List<Player> sortedList = new LinkedList<>();
+//       sortedList = team1.sortASC();
+//
+//        for (Player player: sortedList
+//        ) {
+//            System.out.println("Name: "+player.getName()+"\tNumber: "+player.getNum());
+//        }
+//        System.out.println("***************************************");
+//        team1.printList();
+
     }
 
     public static void convertToPDF() throws IOException, FOPException, TransformerException {
